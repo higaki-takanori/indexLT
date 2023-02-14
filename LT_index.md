@@ -98,25 +98,25 @@ https://products.sint.co.jp/siob/blog/index
 
 インデックスなし
 
-<img src="./image/no-index.png" height="500">
+<img src="image/no-index.png" height="500">
 
 --
 
 例）6 をインデックスなしで検索する
 
-<img src="./image/no-index-search.png" height="500">
+<img src="image/no-index-search.png" height="500">
 
 ---
 
 インデックスあり
 
-<img src="./image/b-tree.png">
+<img src="image/b-tree.png">
 
 --
 
 例）6 をインデックスありで検索する
 
-<img src="./image/b-tree-search.png">
+<img src="image/b-tree-search.png">
 
 ---
 
@@ -177,7 +177,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
 
 User テーブル
 
-<image src="./image/table.png" height="500">
+<image src="image/table.png" height="500">
 
 --
 
@@ -185,7 +185,7 @@ User テーブル
 
 最下層に ID, NAME, EMAIL の全ての情報がある
 
-<image src="./image/b-tree-cluster.png">
+<image src="image/b-tree-cluster.png">
 
 ---
 
@@ -224,7 +224,7 @@ PostgresSQL では作られない
 
 User テーブル
 
-<image src="./image/table.png" height="500">
+<image src="image/table.png" height="500">
 
 --
 
@@ -234,7 +234,7 @@ NAME にインデックスを貼った場合
 CREATE INDEX index_user_name ON user(name);
 ```
 
-<image src="./image/b-tree-name.png">
+<image src="image/b-tree-name.png">
 
 --
 
@@ -258,7 +258,7 @@ CREATE INDEX index_user_name ON user(name, email);
 
 User テーブル
 
-<image src="./image/table.png" height="500">
+<image src="image/table.png" height="500">
 
 ---
 
@@ -280,7 +280,7 @@ SELECT * FROM users WHERE email = 'sato@example.com';
 
 クラスタインデックスで検索できるか？
 
-<image src="./image/b-tree-cluster.png">
+<image src="image/b-tree-cluster.png">
 
 ID での検索はできるが
 
@@ -290,7 +290,7 @@ ID での検索はできるが
 
 NAME のセカンダリインデックスで検索できるか？
 
-<image src="./image/b-tree-name.png"  height="400">
+<image src="image/b-tree-name.png"  height="400">
 
 NAME での検索はできるが
 
@@ -300,7 +300,7 @@ NAME での検索はできるが
 
 テーブルをフルスキャン(インデックスなしで検索)
 
-<image src="./image/table.png" height="400">
+<image src="image/table.png" height="400">
 
 メールアドレスで検索できそう！
 
@@ -318,23 +318,23 @@ id が PRIMARY KEY だから
 
 クラスタインデックス使えそう！！
 
-<image src="./image/b-tree-cluster-search-user6.png">
+<image src="image/b-tree-cluster-search-user6.png">
 
 必要な情報を GET！
 
 ---
 
-### tanaka の人数を数えよ
+### MOMOTA の人数を数えよ
 
 ```
-SELECT count(name) FROM users WHERE name = 'tanaka';
+SELECT count(name) FROM users WHERE name = 'momota';
 ```
 
 name だから
 
 NAME のセカンダリインデックスが使えそう
 
-<image src="./image/b-tree-name-search.png" height="400">
+<image src="image/b-tree-name-search.png" height="400">
 
 必要な情報を GET！
 
@@ -346,7 +346,7 @@ NAME のセカンダリインデックスが使えそう
 SELECT name, email FROM users WHERE name = 'momota';
 ```
 
-<image src="./image/b-tree-name-search.png"  height="300">
+<image src="image/b-tree-name-search.png"  height="300">
 
 メールアドレスの情報がない！！
 
@@ -358,7 +358,7 @@ SELECT name, email FROM users WHERE name = 'momota';
 
 `ID: 8` を使ってクラスタインデックスで検索
 
-<image src="./image/b-tree-name-search-cluster.png">
+<image src="image/b-tree-name-search-cluster.png">
 
 メールアドレスの情報を GET！
 
@@ -438,10 +438,10 @@ PostgreSQL、Oracle、DB2 がどうなっているかご教授いただけます
 
 実データへの参照先がわかるようになっている
 
-<image src="./image/sqlserver-index.png" height="500">
+<image src="image/sqlserver-index.png" height="500">
 
 ---
 
 ### 実データへの参照
 
-<image src="./image/sqlserver-table.png" height="500">
+<image src="image/sqlserver-table.png" height="500">
