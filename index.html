@@ -199,12 +199,12 @@ MySQL のインデックスについて勉強したので、
         <section >
             <h3>こんなイメージ</h3>
 <p>インデックスなし</p>
-<img src="./image/no-index.png" height="500">
+<img src="image/no-index.png" height="500">
             </section>
         
             <section >
                 <p>例）6 をインデックスなしで検索する</p>
-<img src="./image/no-index-search.png" height="500">
+<img src="image/no-index-search.png" height="500">
             </section>
         
 
@@ -217,12 +217,12 @@ MySQL のインデックスについて勉強したので、
     <section>
         <section >
             <p>インデックスあり</p>
-<img src="./image/b-tree.png">
+<img src="image/b-tree.png">
             </section>
         
             <section >
                 <p>例）6 をインデックスありで検索する</p>
-<img src="./image/b-tree-search.png">
+<img src="image/b-tree-search.png">
             </section>
         
 
@@ -298,13 +298,13 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
             <section >
                 <h3>具体例</h3>
 <p>User テーブル</p>
-<image src="./image/table.png" height="500">
+<image src="image/table.png" height="500">
             </section>
         
             <section >
                 <h3>クラスタインデックス</h3>
 <p>最下層に ID, NAME, EMAIL の全ての情報がある</p>
-<image src="./image/b-tree-cluster.png">
+<image src="image/b-tree-cluster.png">
             </section>
         
 
@@ -348,14 +348,14 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
             <section >
                 <h3>具体例</h3>
 <p>User テーブル</p>
-<image src="./image/table.png" height="500">
+<image src="image/table.png" height="500">
             </section>
         
             <section >
                 <p>NAME にインデックスを貼った場合</p>
 <pre><code>CREATE INDEX index_user_name ON user(name);
 </code></pre>
-<image src="./image/b-tree-name.png">
+<image src="image/b-tree-name.png">
             </section>
         
             <section >
@@ -388,7 +388,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
             
             <h2>インデックスでの検索</h2>
 <p>User テーブル</p>
-<image src="./image/table.png" height="500">
+<image src="image/table.png" height="500">
             </section>
     
 
@@ -412,7 +412,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
         
             <section >
                 <p>クラスタインデックスで検索できるか？</p>
-<image src="./image/b-tree-cluster.png">
+<image src="image/b-tree-cluster.png">
 <p>ID での検索はできるが</p>
 <p>メールアドレスで検索は無理そう</p>
 
@@ -420,7 +420,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
         
             <section >
                 <p>NAME のセカンダリインデックスで検索できるか？</p>
-<image src="./image/b-tree-name.png"  height="400">
+<image src="image/b-tree-name.png"  height="400">
 <p>NAME での検索はできるが</p>
 <p>メールアドレスでの検索は無理そう</p>
 
@@ -428,7 +428,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
         
             <section >
                 <p>テーブルをフルスキャン(インデックスなしで検索)</p>
-<image src="./image/table.png" height="400">
+<image src="image/table.png" height="400">
 <p>メールアドレスで検索できそう！</p>
 <p><span style="color: red;">これで検索</span></p>
 
@@ -448,7 +448,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
 </code></pre>
 <p>id が PRIMARY KEY だから</p>
 <p>クラスタインデックス使えそう！！</p>
-<image src="./image/b-tree-cluster-search-user6.png">
+<image src="image/b-tree-cluster-search-user6.png">
 <p>必要な情報を GET！</p>
 
             </section>
@@ -464,7 +464,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
 </code></pre>
 <p>name だから</p>
 <p>NAME のセカンダリインデックスが使えそう</p>
-<image src="./image/b-tree-name-search.png" height="400">
+<image src="image/b-tree-name-search.png" height="400">
 <p>必要な情報を GET！</p>
 
             </section>
@@ -478,7 +478,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
             <h3>MOMOTA のメールアドレスを探せ</h3>
 <pre><code>SELECT name, email FROM users WHERE name = 'momota';
 </code></pre>
-<image src="./image/b-tree-name-search.png"  height="300">
+<image src="image/b-tree-name-search.png"  height="300">
 <p>メールアドレスの情報がない！！</p>
 <p>クラスタインデックスには全カラムの情報があるはず</p>
 
@@ -487,7 +487,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/innodb-index-types.html
             <section >
                 <h3>MOMOTA のメールアドレスを探せ</h3>
 <p><code>ID: 8</code> を使ってクラスタインデックスで検索</p>
-<image src="./image/b-tree-name-search-cluster.png">
+<image src="image/b-tree-name-search-cluster.png">
 <p>メールアドレスの情報を GET！</p>
 
             </section>
@@ -606,7 +606,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/table-scan-avoidance.html
             
             <h3>インデックスの構造</h3>
 <p>実データへの参照先がわかるようになっている</p>
-<image src="./image/sqlserver-index.png" height="500">
+<image src="image/sqlserver-index.png" height="500">
             </section>
     
 
@@ -616,7 +616,7 @@ https://dev.mysql.com/doc/refman/8.0/ja/table-scan-avoidance.html
         <section >
             
             <h3>実データへの参照</h3>
-<image src="./image/sqlserver-table.png" height="500">
+<image src="image/sqlserver-table.png" height="500">
             </section>
     
 
